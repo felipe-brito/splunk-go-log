@@ -1,7 +1,8 @@
 package model
 
 import (
-	"os"
+	"encoding/json"
+	"github.com/felipe-brito/splunk-go-log/pkg/util"
 	"time"
 )
 
@@ -26,5 +27,10 @@ func (m *Message) SetTime() {
 }
 
 func (m *Message) SetHost() {
-	m.Host, _ = os.Hostname()
+	m.Host = util.HostName()
+}
+
+func (m *Message) GetBytes() []byte {
+	b, _ := json.Marshal(m)
+	return b
 }

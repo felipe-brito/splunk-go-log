@@ -1,19 +1,29 @@
 package model
 
-// 	HecSettings :
+// 	HECSettings :
 // 	Url -
 // 	Source -
 // 	SourceType -
 // 	Index -
-type HecSettings struct {
-	Url        string
-	Source     string
-	SourceType string
-	Index      string
+type HECSettings struct {
+	Url          string
+	Source       string
+	SourceType   string
+	Index        string
+	WorkSettings WorkSettings
 }
 
-// 	TcpSettings :
+// 	TCPSettings :
 // 	Url -
-type TcpSettings struct {
-	Url string
+type TCPSettings struct {
+	Url          string
+	WorkSettings WorkSettings
+}
+
+// 	WorkSettings :
+// 	NumberOfWorkers -
+// 	Retry -
+type WorkSettings struct {
+	NumberOfWorkers int
+	Retry           int
 }

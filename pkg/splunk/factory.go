@@ -11,11 +11,11 @@ type ServiceType string
 // 	Connection :
 // 	Configuration -
 // 	Initialize -
-// 	setValidConfiguration -
+// 	setActiveConfiguration -
 type Connection interface {
 	Configuration(settings interface{}) error
-	Initialize()
-	setValidConfiguration(validConfiguration bool)
+	Initialize() error
+	setActiveConfiguration(activeConfiguration bool)
 }
 
 // 	GetInstance :
@@ -23,10 +23,10 @@ type Connection interface {
 func GetInstance(serviceType ServiceType) Connection {
 	switch serviceType {
 	case HEC:
-		return &HecConnectionImpl{}
+		return &HECConnectionImpl{}
 	case TCP:
-		return &TcpConnectionImpl{}
+		return &TCPConnectionImpl{}
 	default:
-		return &TcpConnectionImpl{}
+		return &TCPConnectionImpl{}
 	}
 }

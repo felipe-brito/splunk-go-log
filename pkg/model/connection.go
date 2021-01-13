@@ -1,17 +1,17 @@
 package model
 
-// 	HecConnection :
-// 	hecSettings -
-// 	isValidConfiguration -
-type HecConnection struct {
-	HecSettings         HecSettings
+// 	HECConnection :
+// 	HECSettings -
+// 	ActiveConfiguration -
+type HECConnection struct {
+	HECSettings         HECSettings
 	ActiveConfiguration bool
 }
 
-// 	TcpConnection :
-// 	tcpSettings -
-// 	isValidConfiguration -
-type TcpConnection struct {
-	TcpSettings         TcpSettings
+// 	TCPConnection :
+// 	TCPSettings -
+// 	ActiveConfiguration -
+type TCPConnection struct {
+	TCPSettings         TCPSettings
 	ActiveConfiguration bool
 }
